@@ -1,0 +1,53 @@
+@import 'hack.css';
+@import 'dark.css';
+
+body {
+  display: flex;
+  height: 100vh;
+  background: black;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; 
+}
+
+.alert-info-message {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  margin: 0;
+  opacity: 0;
+}
+
+.animated {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation-name: fadeIn;
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.fadeOut {
+  animation-name: fadeOut;
+}
