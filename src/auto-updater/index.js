@@ -1,7 +1,7 @@
 const electron = require('electron')
 const os = require('os')
 const autoUpdater = electron.autoUpdater
-const appVersion = require('../package.json').version
+const appVersion = require('../../package.json').version
 
 let updateFeed = ''
 let initialized = false
