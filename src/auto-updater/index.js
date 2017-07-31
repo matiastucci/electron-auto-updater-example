@@ -16,6 +16,7 @@ if (os.platform() === 'darwin') {
 
 function init(mainWindow) {
   mainWindow.webContents.send('console', `App version: ${appVersion}`)
+  mainWindow.webContents.send('message', `🖥 App version: ${appVersion}`)
 
   if (initialized || !updateFeed || process.env.NODE_ENV === 'development') { return }
 
@@ -24,7 +25,7 @@ function init(mainWindow) {
   autoUpdater.setFeedURL(updateFeed)
 
   autoUpdater.on('error', (ev, err) => {
-    mainWindow.webContents.send('message', err)
+    mainWindow.webContents.send('message', `😱 ${err}`)
   })
 
   autoUpdater.once('checking-for-update', (ev, err) => {
@@ -40,7 +41,7 @@ function init(mainWindow) {
   })
 
   autoUpdater.once('update-downloaded', (ev, err) => {
-    mainWindow.webContents.send('message', '🤘 Update downloaded')
+    mainWindow.webContents.send('update-downloaded')
   })
 
   autoUpdater.checkForUpdates()
