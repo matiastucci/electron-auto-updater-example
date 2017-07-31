@@ -4,7 +4,7 @@
   "description": "Electron auto updater starter",
   "main": "src/main.js",
   "scripts": {
-    "dev": "electron .",
+    "dev": "NODE_ENV=development electron .",
     "pack": "electron-builder --dir",
     "build": "electron-builder"
   },
