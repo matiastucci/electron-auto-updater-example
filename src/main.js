@@ -1,6 +1,7 @@
 const electron = require('electron')
 const path = require('path')
 const url = require('url')
+const autoUpdater = require('./auto-updater')
 if (require('electron-squirrel-startup')) app.quit()
 
 const app = electron.app
@@ -17,15 +18,16 @@ function createWindow () {
     slashes: true
   }))
 
-  // mainWindow.webContents.openDevTools()
+  if (process.env.NODE_ENV === 'development') {
+    mainWindow.webContents.openDevTools()
+  }
 
   mainWindow.on('closed', () => {
     mainWindow = null
   })
 
   mainWindow.webContents.on('did-finish-load', () => {
-    console.log('finish')
-    mainWindow.webContents.send('message', '🔎 checking for updates')
+    autoUpdater.init(mainWindow)
   })
 }
 

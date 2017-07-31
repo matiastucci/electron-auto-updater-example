@@ -11,11 +11,14 @@ body {
   flex-direction: column; 
 }
 
-.alert-info-message {
+.messages-container {
   position: absolute;
   top: 15px;
   right: 15px;
   margin: 0;
+}
+
+.alert-info-message {
   opacity: 0;
 }
 
