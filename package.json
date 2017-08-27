@@ -25,6 +25,16 @@
     "productName": "AutoUpdater",
     "mac": {
       "category": "public.app-category.developer-tools"
+    },
+    "win": {
+      "target": [
+        "squirrel"
+      ]
+    },
+    "linux": {
+      "target": [
+        "deb"
+      ]
     }
   },
   "devDependencies": {
