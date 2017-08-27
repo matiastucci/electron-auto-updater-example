@@ -16,7 +16,7 @@ if (os.platform() === 'darwin') {
 
 function init(mainWindow) {
   mainWindow.webContents.send('console', `App version: ${appVersion}`)
-  mainWindow.webContents.send('message', `🖥 App version: ${appVersion}`)
+  mainWindow.webContents.send('message', { msg: `🖥 App version: ${appVersion}` })
 
   if (initialized || !updateFeed || process.env.NODE_ENV === 'development') { return }
 
@@ -25,23 +25,24 @@ function init(mainWindow) {
   autoUpdater.setFeedURL(updateFeed)
 
   autoUpdater.on('error', (ev, err) => {
-    mainWindow.webContents.send('message', `😱 ${err}`)
+    mainWindow.webContents.send('message', { msg: `😱 Error: ${err}` })
   })
 
   autoUpdater.once('checking-for-update', (ev, err) => {
-    mainWindow.webContents.send('message', '🔎 Checking for updates')
+    mainWindow.webContents.send('message', { msg: '🔎 Checking for updates' })
   })
 
   autoUpdater.once('update-available', (ev, err) => {
-    mainWindow.webContents.send('message', '🎉 Update available')
+    mainWindow.webContents.send('message', { msg: '🎉 Update available. Downloading ⌛️', hide: false })
   })
 
   autoUpdater.once('update-not-available', (ev, err) => {
-    mainWindow.webContents.send('message', '👎 Update not available')
+    mainWindow.webContents.send('message', { msg: '👎 Update not available' })
   })
 
   autoUpdater.once('update-downloaded', (ev, err) => {
-    mainWindow.webContents.send('update-downloaded')
+    const msg = '<p style="margin: 0;">🤘 Update downloaded - <a onclick="quitAndInstall()">Restart</a></p>'
+    mainWindow.webContents.send('message', { msg, hide: false, replaceAll: true })
   })
 
   autoUpdater.checkForUpdates()
