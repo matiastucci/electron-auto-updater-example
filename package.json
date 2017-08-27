@@ -28,6 +28,7 @@
     },
     "win": {
       "icon": "icons/icon.ico",
+      "iconUrl": "https://raw.githubusercontent.com/matiastucci/electron-auto-updater-example/master/icons/icon.ico",
       "target": [
         "squirrel"
       ]
