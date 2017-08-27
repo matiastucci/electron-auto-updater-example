@@ -2,7 +2,7 @@ const electron = require('electron')
 const path = require('path')
 const url = require('url')
 const autoUpdater = require('./auto-updater')
-if (require('electron-squirrel-startup')) app.quit()
+if (require('electron-squirrel-startup')) electron.app.quit()
 
 const app = electron.app
 const BrowserWindow = electron.BrowserWindow
