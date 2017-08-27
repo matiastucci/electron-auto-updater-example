@@ -1,5 +1,9 @@
 # Electron auto updater example
 
+<p align="center">
+  <img src="screen.png" width="350" alt="Logo"/>
+</p>
+
 This is a minimal Electron application with auto updates implemented and based on the [electron-quick-start](https://github.com/electron/electron-quick-start).
 
 ## Projects in use:
