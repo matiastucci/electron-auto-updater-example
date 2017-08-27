@@ -27,7 +27,7 @@
       "category": "public.app-category.developer-tools"
     },
     "win": {
-      "iconUrl": "",
+      "icon": "icons/icon.ico",
       "target": [
         "squirrel"
       ]
