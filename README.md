@@ -6,6 +6,9 @@
 
 This is a minimal Electron application with auto updates implemented and based on the [electron-quick-start](https://github.com/electron/electron-quick-start).
 
+## Try it:
+The last version of this example is `1.0.2`. So you can download the [`1.0.1`](https://github.com/matiastucci/electron-auto-updater-example/releases/tag/1.0.1) one and see how the app finds the latest version and downloads it 🎉
+
 ## Projects in use:
 - **Building process:** [`electron-builder`](https://github.com/electron-userland/electron-builder) (if you're using OS X, you'll need to [sign the app](https://github.com/electron-userland/electron-builder/wiki/Code-Signing))
 - **Auto updates server:** [`nuts`](https://github.com/GitbookIO/nuts)
