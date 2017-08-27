@@ -1,7 +1,7 @@
 {
-  "name": "electron-auto-updater-starter",
+  "name": "electron-auto-updater-example",
   "version": "1.0.0",
-  "description": "Electron auto updater starter",
+  "description": "Electron auto updater example",
   "main": "src/main.js",
   "scripts": {
     "dev": "NODE_ENV=development electron .",
